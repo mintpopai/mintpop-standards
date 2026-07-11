@@ -33,7 +33,7 @@ jobs:
       packages: write     # 推 GHCR
     steps:
       - name: 检出代码
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       # 单架构默认（runner 本机 amd64），不加 QEMU；Buildx 仍保留：gha 层缓存与
       # Dockerfile.dockerignore 都依赖 BuildKit。
@@ -81,8 +81,10 @@ jobs:
     permissions:
       contents: write                  # 建 Release
     steps:
+      # 本 job 的 checkout 必须 v6+：v4/v5 会在拉完全部 tag 后再用 commit SHA 覆写触发
+      # tag（checkout#290），把 annotated tag 剥成轻量 ref，导致下方注释置顶读不到。
       - name: 检出代码（全量历史，changelog COMMIT 模式需要）
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
