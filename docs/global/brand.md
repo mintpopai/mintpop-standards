@@ -37,12 +37,41 @@
 
 ## 四、字体（INVARIANT）
 
-| 字体 | 角色 | 字重 |
-|---|---|---|
-| **Fredoka** | 词标 / Logo / 展示大标题（圆润几何无衬线，与 logo 字形一致） | SemiBold |
-| **Inter** | UI 与正文 | Regular / Medium / SemiBold |
+展示字体**二选一**，正文字体**固定**。产品选哪副展示字体，在自己的设计规范里写明。
 
-- 一律**自托管**（走 [Fontsource](https://fontsource.org)：`@fontsource/fredoka`、`@fontsource/inter`），**禁止外链 Google Fonts**，保证含中国大陆在内全球可达。
+| 字体 | 角色 | 气质 | 字重 |
+|---|---|---|---|
+| **Newsreader** | 展示大标题 / 标题（**默认**；衬线，斜体用于标题内强调） | 专业、稳重 | Medium / Medium Italic |
+| **Fredoka** | 展示大标题 / 标题（**可选**；圆润几何无衬线，与 logo 字形同源） | 俏皮、活泼 | SemiBold |
+| **Space Grotesk** | UI 与正文（所有产品统一） | — | Regular / Medium / SemiBold / Bold |
+
+- 一律**自托管**（走 [Fontsource](https://fontsource.org)：`@fontsource/newsreader`、`@fontsource/fredoka`、`@fontsource/space-grotesk`），**禁止外链 Google Fonts**，保证含中国大陆在内全球可达。
+- 中文**不自托管** webfont（体积以 MB 计），挂在两副西文字体之后走系统回退：`PingFang SC` / `Hiragino Sans GB` / `Microsoft YaHei` / `Noto Sans CJK SC`。
+- 词标（logo）字形烤在图片里，不靠任何 webfont 渲染；不要用文字排出 logo，一律引用[资源样例](#六、资源样例)里的词标图。
+
+**字体样张**（本站真实渲染，中文走系统回退）：
+
+<div style="display:grid;gap:16px;margin:12px 0 8px">
+  <div style="padding:20px 24px;border:1px solid var(--vp-c-divider);border-radius:12px;background:var(--vp-c-bg-soft)">
+    <div style="font-size:12px;color:var(--vp-c-text-2);margin-bottom:8px">Newsreader · 展示（默认）· Medium / Medium Italic</div>
+    <div style="font-family:'Newsreader','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',serif;font-weight:500;font-size:40px;line-height:1.15">One API for text, vision, <em>and voice.</em></div>
+    <div style="font-family:'Newsreader','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',serif;font-weight:500;font-size:28px;line-height:1.3;margin-top:6px">一个接口，文本、视觉与语音</div>
+  </div>
+  <div style="padding:20px 24px;border:1px solid var(--vp-c-divider);border-radius:12px;background:var(--vp-c-bg-soft)">
+    <div style="font-size:12px;color:var(--vp-c-text-2);margin-bottom:8px">Fredoka · 展示（可选）· SemiBold</div>
+    <div style="font-family:'Fredoka','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;font-weight:600;font-size:40px;line-height:1.15">Pop into something fresh.</div>
+    <div style="font-family:'Fredoka','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;font-weight:600;font-size:28px;line-height:1.3;margin-top:6px">世界杯赛事预测 · 队名 VS 大数字 2026</div>
+  </div>
+  <div style="padding:20px 24px;border:1px solid var(--vp-c-divider);border-radius:12px;background:var(--vp-c-bg-soft)">
+    <div style="font-size:12px;color:var(--vp-c-text-2);margin-bottom:8px">Space Grotesk · UI 与正文 · Regular / Medium / SemiBold / Bold</div>
+    <div style="font-family:'Space Grotesk','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;font-size:17px;line-height:1.6">
+      <span style="font-weight:400">Regular 400 — Build text, vision, and voice into your product. 把文本、视觉与语音接进你的产品。</span><br>
+      <span style="font-weight:500">Medium 500 — Build text, vision, and voice into your product. 把文本、视觉与语音接进你的产品。</span><br>
+      <span style="font-weight:600">SemiBold 600 — Build text, vision, and voice into your product. 把文本、视觉与语音接进你的产品。</span><br>
+      <span style="font-weight:700">Bold 700 — Build text, vision, and voice into your product. 把文本、视觉与语音接进你的产品。</span>
+    </div>
+  </div>
+</div>
 
 ## 五、Logo · 词标（INVARIANT）
 

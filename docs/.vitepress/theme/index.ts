@@ -4,12 +4,15 @@ import Layout from './Layout.vue'
 import ProductGrid from './ProductGrid.vue'
 import BrandAssets from './BrandAssets.vue'
 
-// 品牌字体：Fredoka（展示/词标）+ Inter（UI/正文），均自托管（Fontsource），
-// 禁外链 Google Fonts，保证含中国大陆在内全球可达（见 /global/brand 字体规范）。
-import '@fontsource/inter/400.css'
-import '@fontsource/inter/500.css'
-import '@fontsource/inter/600.css'
-import '@fontsource/fredoka/500.css'
+// 品牌字体：Newsreader（展示，默认）/ Fredoka（展示，可选）+ Space Grotesk（UI/正文），
+// 均自托管（Fontsource），禁外链 Google Fonts，保证含中国大陆在内全球可达（见 /global/brand 字体规范）。
+// 三副都装：本站展示字体用 Newsreader，Fredoka 只为品牌页字体样张渲染。
+import '@fontsource/space-grotesk/400.css'
+import '@fontsource/space-grotesk/500.css'
+import '@fontsource/space-grotesk/600.css'
+import '@fontsource/space-grotesk/700.css'
+import '@fontsource/newsreader/500.css'
+import '@fontsource/newsreader/500-italic.css'
 import '@fontsource/fredoka/600.css'
 
 // 品牌主题层：Mint 主色 + 字体映射 + hero 渐变（覆盖 VitePress 默认 indigo）

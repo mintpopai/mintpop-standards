@@ -6,7 +6,8 @@
   "description": "MintPop 品牌下各产品的设计与接入规范中心（供人与 coding Agent 参考）",
   "devDependencies": {
     "@fontsource/fredoka": "^5.2.10",
-    "@fontsource/inter": "^5.2.8",
+    "@fontsource/newsreader": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
     "@types/node": "^26.1.1",
     "typescript": "^5.9.3",
     "vitepress": "^1.6.3",
