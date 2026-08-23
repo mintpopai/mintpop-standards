@@ -3,17 +3,18 @@
  * 把 /global/brand（INVARIANT）+ /global/design-baseline（REFERENCE）落到 VitePress。
  *
  * - 主色：Mint #17D1A7（brand.md 实采样），hover/按下走 Mint Deep / Bright。
- * - 字体：展示大标题/词标用 Fredoka；UI 与正文用 Inter。二者均自托管（见 index.ts import Fontsource），不外链 Google Fonts。
+ * - 字体：展示大标题用 Newsreader（品牌默认展示字体）；UI 与正文用 Space Grotesk。均自托管（见 index.ts import Fontsource），不外链 Google Fonts。
  * - 可访问性：Mint 偏亮，链接文字在浅底会不达 AA，故 --vp-c-brand-1 用「深 Mint」保证 ≥4.5:1；
  *   Mint 实色按钮统一用 Ink 深字（深字压亮底，对比度高），而非白字。
  */
 
 :root {
-  /* —— 字体（design-baseline 默认字体栈；Inter 由 Fontsource 交付） —— */
-  --vp-font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "PingFang SC", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
-  /* Fredoka 展示字体（词标/大标题），非 VitePress 原生变量，供本主题选择器引用 */
-  --mp-font-display: "Fredoka", var(--vp-font-family-base);
+  /* —— 字体（design-baseline 默认字体栈；西文由 Fontsource 交付，中文回退系统字体） —— */
+  --vp-font-family-base: "Space Grotesk", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Noto Sans CJK SC", sans-serif;
+  /* Newsreader 展示字体（大标题，品牌默认），非 VitePress 原生变量，供本主题选择器引用 */
+  --mp-font-display: "Newsreader", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Noto Sans CJK SC", serif;
 
   /* —— 品牌色阶（brand.md 配色） —— */
   --mp-mint: #17D1A7; /* 主色 */
@@ -116,8 +117,8 @@ html.dark .hero-wordmark--dark {
   }
 }
 
-/* —— Fredoka 用于「展示大标题 / 词标」：首页 hero 名 + 文档页 H1 —— */
-/* 正文与 h2/h3 保持 Inter，克制、不喧宾夺主（符合 design-baseline 的克制感） */
+/* —— Newsreader 用于「展示大标题」：首页 hero 名 + 文档页 H1 —— */
+/* 正文与 h2/h3 保持 Space Grotesk，克制、不喧宾夺主（符合 design-baseline 的克制感） */
 .VPHero .name,
 .VPHero .text {
   font-family: var(--mp-font-display);

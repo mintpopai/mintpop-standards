@@ -11,9 +11,12 @@ importers:
       '@fontsource/fredoka':
         specifier: ^5.2.10
         version: 5.2.10
-      '@fontsource/inter':
-        specifier: ^5.2.8
-        version: 5.2.8
+      '@fontsource/newsreader':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource/space-grotesk':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@types/node':
         specifier: ^26.1.1
         version: 26.1.1
@@ -289,8 +292,11 @@ packages:
   '@fontsource/fredoka@5.2.10':
     resolution: {integrity: sha512-DyzPCmTf0PkBbAu+gNvnPzfD/dYIXlyp+Zcb76jEQyt/vmRKGZgkH8FFF9W2sICDaA5p+GLk1XGFjWh5PPX+lg==}
 
-  '@fontsource/inter@5.2.8':
-    resolution: {integrity: sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==}
+  '@fontsource/newsreader@5.3.0':
+    resolution: {integrity: sha512-AFR6ZKY89GNL+9qBI2P2+66NhD5bhOj/v6fsLnFYLM4E0JnMB1yKb+Ro8cA64i1hwAWoBfTq5CHJGWH1toLDkw==}
+
+  '@fontsource/space-grotesk@5.3.0':
+    resolution: {integrity: sha512-ksnGizDPXIDuvqcTYTSrmZ+evx9sDlS8rp7+42BQ7wU+spt3twEoXfbJz672C+5CLg6VeUQwRy5RXshWb67LcQ==}
 
   '@iconify-json/simple-icons@1.2.89':
     resolution: {integrity: sha512-hRaCY5s2G5oWAIhc4LCGYn6g6RrwLL4zhoLOT+KUO3joVCxVlZKA+839bv/47Nbe9/ZD4UA6dznZ4XPYcI53wA==}
@@ -1106,7 +1112,9 @@ snapshots:
 
   '@fontsource/fredoka@5.2.10': {}
 
-  '@fontsource/inter@5.2.8': {}
+  '@fontsource/newsreader@5.3.0': {}
+
+  '@fontsource/space-grotesk@5.3.0': {}
 
   '@iconify-json/simple-icons@1.2.89':
     dependencies:

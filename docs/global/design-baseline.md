@@ -21,13 +21,16 @@
 
 ## 二、字体（REFERENCE）
 
-- 品牌字体为 **Fredoka**（展示 / 词标）+ **Inter**（UI / 正文），见[品牌规范](/global/brand#四、字体-invariant)。产品 UI 默认用 **Inter**。
-- 一律**自托管**（Fontsource：`@fontsource/inter` 等），**禁止外链 Google Fonts**，保证含中国大陆在内全球可达。
-- 默认字体栈（Inter 未加载时优雅回退）：
+- 展示 / 标题字体**默认 Newsreader**（衬线，专业稳重）；要俏皮气质的产品可改选 **Fredoka**（圆体），**二选一**，在产品设计规范里写明。正文 / UI 统一 **Space Grotesk**。详见[品牌规范](/global/brand#四、字体-invariant)。
+- 一律**自托管**（Fontsource：`@fontsource/newsreader`、`@fontsource/fredoka`、`@fontsource/space-grotesk`），**禁止外链 Google Fonts**，保证含中国大陆在内全球可达。
+- 默认字体栈（西文走自托管字体，中文回退系统字体，不自托管中文 webfont）：
   ```css
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "PingFang SC", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: 'Space Grotesk', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'Noto Sans CJK SC', sans-serif;
+  --font-serif: 'Newsreader', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'Noto Sans CJK SC', serif;
   ```
+  选 Fredoka 的产品：展示字体栈把 `'Newsreader'` 换成 `'Fredoka'`，尾部回退改 `sans-serif`。
 
 ## 三、间距与圆角（REFERENCE）
 
@@ -45,7 +48,8 @@
 | 项 | 能否改 | 说明 |
 |---|---|---|
 | 主色 / 强调色 | ✅ 可改 | 保留「克制、强调色点缀」的思路 |
-| 字体 | ✅ 可改 | 但须自托管、全球可达 |
+| 展示字体 | ⚠️ 二选一 | Newsreader（默认）或 Fredoka，见[品牌规范](/global/brand#四、字体-invariant) |
+| 正文字体 | ❌ 不可改 | 统一 Space Grotesk |
 | 圆角 / 间距密度 | ✅ 可改 | 保持产品内部一致 |
 | 品牌 Logo / 命名 | ❌ 不可改 | 见 [品牌规范](/global/brand)（INVARIANT） |
 | 整体克制感与可访问性 | ⚠️ 建议守 | 偏离要有明确理由 |
