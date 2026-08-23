@@ -19,14 +19,25 @@ jobs:
     name: 推送流水线结果到飞书
     runs-on: ubuntu-latest
     steps:
+      # 字段按 feishu-notify-action 文档补齐（与 mintpop-shop 一致）：
+      # 卡片除成功/失败外，还展示分支/Tag、触发事件与触发者、commit 信息、起止时间与耗时。
       - name: 推送流水线结果到飞书私聊
         uses: yuebai-blast/feishu-notify-action@v1
         with:
-          app_id: ${{ secrets.FEISHU_APP_ID }}
-          app_secret: ${{ secrets.FEISHU_APP_SECRET }}
-          receive_id: ${{ secrets.FEISHU_RECEIVE_ID }}
-          status: ${{ github.event.workflow_run.conclusion }}
-          workflow_name: ${{ github.event.workflow_run.name }}
-          repo: ${{ github.repository }}
-          run_url: ${{ github.event.workflow_run.html_url }}
-          github_token: ${{ github.token }}
+          app_id:         ${{ secrets.FEISHU_APP_ID }}
+          app_secret:     ${{ secrets.FEISHU_APP_SECRET }}
+          receive_id:     ${{ secrets.FEISHU_RECEIVE_ID }}
+          status:         ${{ github.event.workflow_run.conclusion }}
+          workflow_name:  ${{ github.event.workflow_run.name }}
+          repo:           ${{ github.repository }}
+          branch:         ${{ github.event.workflow_run.head_branch }}
+          event:          ${{ github.event.workflow_run.event }}
+          actor:          ${{ github.event.workflow_run.actor.login }}
+          run_url:        ${{ github.event.workflow_run.html_url }}
+          run_id:         ${{ github.event.workflow_run.id }}
+          commit_sha:     ${{ github.event.workflow_run.head_sha }}
+          commit_message: ${{ github.event.workflow_run.head_commit.message }}
+          commit_author:  ${{ github.event.workflow_run.head_commit.author.name }}
+          run_started_at: ${{ github.event.workflow_run.run_started_at }}
+          run_updated_at: ${{ github.event.workflow_run.updated_at }}
+          github_token:   ${{ github.token }}
