@@ -56,10 +56,18 @@ mise run up          # docker compose 拉起（拉 GHCR 已发布镜像）
 mise run down
 ```
 
+镜像是**私有包**，部署机首次需先登录 GHCR（PAT 需 `read:packages` 权限）：
+
+```bash
+echo "<PAT>" | docker login ghcr.io -u <GitHub 用户名> --password-stdin
+```
+
 部署机通过环境变量切版本与端口：
 
 ```bash
-APP_TAG=v0.1.0 APP_PORT=8080 docker compose up -d
+# APP_TAG 是镜像标签，不带 v 前缀（metadata-action 的 type=semver 已把 v0.1.3 剥成 0.1.3）
+export APP_TAG=0.1.3 APP_PORT=8080
+docker compose pull && docker compose up -d
 ```
 
 ## 图标 / Logo
@@ -67,9 +75,24 @@ APP_TAG=v0.1.0 APP_PORT=8080 docker compose up -d
 放进 `docs/public/assets/icons/`，会原样发布到站点根：
 `docs/public/assets/icons/logo.svg` → `https://<域名>/assets/icons/logo.svg`。各产品直接引用同一份。
 
-## 待补（下一步）
+## CI/CD 与发版
 
-- `.github/workflows/`：`ci.yml`（构建门禁）、`release.yml`（tag 触发建镜像 + GitHub Release）、`action-notify.yml`（飞书通知）。
-- 发版 `mise run release` 任务。
+`.github/workflows/`：
+
+| 文件 | 触发 | 职责 |
+| --- | --- | --- |
+| `quality.yml` | `workflow_call`（不独立触发） | 可复用质量门禁：install → typecheck → build |
+| `ci.yml` | PR / push main | 调 `quality.yml`，合并前校验 |
+| `release.yml` | tag `v*.*.*` / 手动 | 发版前先过 `quality.yml`，再推 GHCR 镜像（`:X.Y.Z` + `:latest`），最后建 GitHub Release |
+| `action-notify.yml` | `workflow_run`（CI / Release 完成） | 把流水线结果推到飞书私聊 |
+
+发版一条命令（校验 → 同步 `package.json` 版本并提交 → 打 tag → 推送，由 tag 触发 `release.yml`）：
+
+```bash
+mise run release                      # 最新稳定 tag 的 patch+1，无说明
+mise run release "更新说明"            # patch+1，带说明
+mise run release v0.4.0               # 指定版本号
+mise run release v0.4.0 "更新说明"     # 指定版本号 + 说明
+```
 
 > 域名规划：`standards.mintpop.ai`。

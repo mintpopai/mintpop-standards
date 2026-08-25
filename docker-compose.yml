@@ -1,7 +1,7 @@
 # 部署：拉 registry 已发布镜像运行；本地构建镜像用 mise run image，不归 compose 管
 services:
   standards:
-    image: ghcr.io/yuebai-blast/mintpop-standards:${APP_TAG:-latest}
+    image: ghcr.io/mintpopai/mintpop-standards:${APP_TAG:-latest}
     container_name: mintpop-standards
     restart: unless-stopped
     ports:

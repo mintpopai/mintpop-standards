@@ -35,8 +35,8 @@ description = "构建镜像（Dockerfile，mise 多阶段；context 取仓库根
 run = "docker build -f Dockerfile -t mintpop-standards:local ."
 
 [tasks.up]
-description = "docker compose 拉起站点"
-run = "docker compose up -d"
+description = "docker compose 拉起站点（先 pull：latest 是滚动标签，不先拉会一直用本机旧缓存）"
+run = "docker compose pull && docker compose up -d"
 
 [tasks.down]
 description = "停止站点"
