@@ -41,6 +41,34 @@ export const products: Product[] = [
     logo: '/assets/products/game-seer/logo.svg',
   },
   {
+    slug: 'lane',
+    name: 'MintPop Lane',
+    tagline: '（待补）一句话简介',
+    logo: '/assets/products/lane/lane-app-cloud.png',
+    assets: [
+      {
+        title: '应用瓦片 App Tile @512',
+        // 同一张图并排放浅底 / 深底，一眼看出它「深浅主题通用」——这正是它作为首选的理由
+        preview: [
+          { img: 'lane-app-cloud.png', bg: 'light' },
+          { img: 'lane-app-cloud.png', bg: 'dark' },
+        ],
+        files: [{ path: 'lane-app-cloud.png', desc: 'Cloud 底 · 深浅通用（首选）' }],
+      },
+      {
+        title: '图标 Icon · 透明底',
+        preview: [{ img: 'lane-icon-256.png', bg: 'checker' }],
+        files: [
+          { path: 'lane-icon.png', desc: '原始 · 955×1056' },
+          { path: 'lane-icon-square.png', desc: '方形安全区版 · 420' },
+          { path: 'lane-icon-256.png', desc: '256 高' },
+          { path: 'lane-icon-128.png', desc: '128 高' },
+          { path: 'lane-icon-64.png', desc: '64 高' },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'raw-lens',
     name: 'MintPop Raw Lens',
     tagline: '（示例）影像处理工具',
