@@ -3,6 +3,7 @@ import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
 import ProductGrid from './ProductGrid.vue'
 import BrandAssets from './BrandAssets.vue'
+import ProductAssets from './ProductAssets.vue'
 
 // 品牌字体：Newsreader（展示，默认）/ Fredoka（展示，可选）+ Space Grotesk（UI/正文），
 // 均自托管（Fontsource），禁外链 Google Fonts，保证含中国大陆在内全球可达（见 /global/brand 字体规范）。
@@ -20,12 +21,13 @@ import './custom.css'
 
 // 扩展默认主题：
 // - Layout 包装组件把「复制 Markdown」按钮注入到每篇文档顶部
-// - 全局注册 ProductGrid（首页宫格）、BrandAssets（品牌页资源样例画廊）
+// - 全局注册 ProductGrid（首页宫格）、BrandAssets（品牌页资源画廊）、ProductAssets（产品页资源画廊）
 export default {
   extends: DefaultTheme,
   Layout,
   enhanceApp({ app }) {
     app.component('ProductGrid', ProductGrid)
     app.component('BrandAssets', BrandAssets)
+    app.component('ProductAssets', ProductAssets)
   },
 } satisfies Theme
