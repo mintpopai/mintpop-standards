@@ -69,6 +69,33 @@ export const products: Product[] = [
     ],
   },
   {
+    slug: 'shop',
+    name: 'MintPop Shop',
+    tagline: 'MintPop 品牌商店 · 分组陈列商品，一键下单走统一支付',
+    logo: '/assets/products/shop/shop-app-cloud.png',
+    assets: [
+      {
+        title: '应用瓦片 App Tile @512',
+        preview: [
+          { img: 'shop-app-cloud.png', bg: 'light' },
+          { img: 'shop-app-cloud.png', bg: 'dark' },
+        ],
+        files: [{ path: 'shop-app-cloud.png', desc: 'Cloud 底 · 深浅通用（首选）' }],
+      },
+      {
+        title: '图标 Icon · 透明底',
+        preview: [{ img: 'shop-icon-256.png', bg: 'checker' }],
+        files: [
+          { path: 'shop-icon.png', desc: '原始 · 793×810' },
+          { path: 'shop-icon-square.png', desc: '方形安全区版 · 420' },
+          { path: 'shop-icon-256.png', desc: '256 高' },
+          { path: 'shop-icon-128.png', desc: '128 高' },
+          { path: 'shop-icon-64.png', desc: '64 高' },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'raw-lens',
     name: 'MintPop Raw Lens',
     tagline: '（示例）影像处理工具',
