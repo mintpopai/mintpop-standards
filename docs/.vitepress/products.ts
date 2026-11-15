@@ -96,6 +96,33 @@ export const products: Product[] = [
     ],
   },
   {
+    slug: 'plug',
+    name: 'MintPop Plug',
+    tagline: '（待补）一句话简介',
+    logo: '/assets/products/plug/plug-app-cloud.png',
+    assets: [
+      {
+        title: '应用瓦片 App Tile @512',
+        preview: [
+          { img: 'plug-app-cloud.png', bg: 'light' },
+          { img: 'plug-app-cloud.png', bg: 'dark' },
+        ],
+        files: [{ path: 'plug-app-cloud.png', desc: 'Cloud 底 · 深浅通用（首选）' }],
+      },
+      {
+        title: '图标 Icon · 透明底',
+        preview: [{ img: 'plug-icon-256.png', bg: 'checker' }],
+        files: [
+          { path: 'plug-icon.png', desc: '原始 · 641×658' },
+          { path: 'plug-icon-square.png', desc: '方形安全区版 · 420' },
+          { path: 'plug-icon-256.png', desc: '256 高' },
+          { path: 'plug-icon-128.png', desc: '128 高' },
+          { path: 'plug-icon-64.png', desc: '64 高' },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'raw-lens',
     name: 'MintPop Raw Lens',
     tagline: '（示例）影像处理工具',

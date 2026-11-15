@@ -13,5 +13,5 @@
 |---|---|---|
 | [统一账号接入](/global/account-integration) | `INVARIANT` | 各产品作为 OIDC 应用统一接入 MintPop 账号中心（Logto） |
 | [统一支付接入](/global/payment-integration) | `INVARIANT` | Stripe PaymentIntent 后端接入 + 前端「微信 / 支付宝 / 银行卡」拍平展示 |
-| [品牌 Logo 与用法](/global/brand) | `INVARIANT` | 品牌名写法、Logo 资源与使用规则、域名约定 |
+| [品牌 Logo 与用法](/global/brand) | `INVARIANT` | 品牌名写法、Logo 资源与使用规则、产品图标规格、域名约定 |
 | [设计基线](/global/design-baseline) | `REFERENCE` | 默认配色 / 字体 / 间距，产品可在边界内自定义 |
